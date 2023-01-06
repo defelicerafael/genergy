@@ -1,0 +1,5 @@
+RewriteEngine on
+
+# Redirigir genergy.com.ar a genergy.world
+RewriteCond %{HTTP_HOST} ^genergy\.com\.ar$
+RewriteRule (.*) https://genergy.world%{REQUEST_URI} [R=301,L,QSA]

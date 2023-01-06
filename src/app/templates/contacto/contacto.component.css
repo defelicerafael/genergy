@@ -1,0 +1,154 @@
+section{
+  padding: 2rem 2rem;
+  background-color: #F7F7F8;
+
+}
+
+.p-2{
+  padding: 3rem 0rem !important;
+}
+
+.pt-2{
+  margin-top: 1.5rem;
+}
+
+h3{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h4{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 0rem 1rem 3rem 1rem;
+  }
+
+  label{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  /* FORMULARIO */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+.d-grid{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 65% 30%;
+  padding: 4rem 1rem 4rem 1rem;
+}
+.d-flex{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.d-flex div{
+  flex:1;
+}
+
+.d-flex-column{
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+ 
+}
+
+.icono{
+  background-color: var(--naranja);
+  border-radius: 5px;
+  padding: 0.8rem;
+}
+
+.d-flex-iconos{
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.titulo-contacto{
+  font-size: 1.2rem;
+  color:black;
+  font-weight: 500;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.texto-contacto{
+  font-size: 1rem;
+  color:black;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.success{
+  margin-top: 1rem;
+  background-color: rgb(177, 248, 186);
+  color:black;
+  padding: 1.5rem;
+}
+.alert{
+  margin-top: 1rem;
+  background-color: rgb(247, 147, 147);
+  color:black;
+  padding: 1.5rem;
+}
+
+  @media only screen and (max-width: 600px) {
+    section{
+      padding: 3rem 0rem 0rem;
+    }
+    .d-grid{
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 100%;
+      padding: 1rem 1rem 4rem 1rem;
+    }
+    .grid-modal{
+        justify-content: center;
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        width: 85%;
+        
+    }
+    .modal-content img{
+        width: 100%;
+        height: auto;
+    }
+    
+  }

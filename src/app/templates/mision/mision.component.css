@@ -1,0 +1,48 @@
+section{
+    padding: 5rem;
+}
+
+.padding-lottie{
+    padding: 2rem;
+}
+.d-grid{
+    display: grid;
+    height: 400px;
+    align-content: center;
+    grid-template-columns: repeat(2,50%);
+    gap: 1rem;
+    padding: 1rem;
+}
+.d-grid div{
+    align-self: center;
+}
+h4{
+    font-size: 1.7rem;
+    color:var(--gris);
+    margin-top: 0.5rem;
+}
+
+.d-grid-cards{
+    display: grid;
+    gap:1.5rem;
+    grid-template-columns: repeat(3,auto);
+    justify-content: space-between;
+    height: 200px;
+    align-content: start;
+   
+}
+@media only screen and (max-width: 746px) {
+    section{
+        padding: 3rem 1.5rem;
+    }
+    .d-grid{
+        grid-template-columns: repeat(1,100%);
+        height: auto;
+        gap: 1.5rem;
+        padding: 0rem;
+        grid-auto-flow: dense; 
+    }
+    .d-grid div{
+        align-self:start;
+    }
+}

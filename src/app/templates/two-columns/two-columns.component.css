@@ -1,0 +1,56 @@
+
+.d-grid{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
+    gap:0;
+
+}
+.d-grid  div{
+    max-width: 100%;
+    padding: 0rem;
+}
+
+.d-flex-alineado{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 0;
+    margin: 2rem;
+}
+
+.rounded{
+    border-radius: 50%;
+}
+.d-grid-texto{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:764px) {
+    section{
+        padding:0rem;
+    }
+    .d-grid{
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-columns: 100%;
+        gap:0.6rem;
+    }
+    
+    .d-grid  div{
+        padding: 0rem;
+    }
+   
+    .d-flex-alineado{
+        display: flex;
+        flex-direction: column;
+        
+        gap: 0.5rem;
+        padding: 0rem 0rem;
+    }
+}

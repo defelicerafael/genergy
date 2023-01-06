@@ -1,0 +1,112 @@
+<section class="bg-img-header-2">
+<div class="d-grid" id="contacto">
+    <div> 
+        <h3 class="text-center wow fadeInUp titulo">DEJANOS UN MENSAJE</h3>
+        <div class="wow fadeInUp pt-2">
+            <form [formGroup]="emailForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+                <div class="d-flex">
+                    <div>
+                        <label for="nombre">Nombre*</label>
+                        <input aria-label="Escriba su nombre" aria-required="true" type="text"  name="nombre" id="nombre" class="form-control" formControlName="nombre" placeholder="Su Nombre" required>
+                        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"  class="alert alert-danger">
+                            <div *ngIf="nombre.errors?.['required']">
+                                Se requiere el Nombre.
+                            </div>
+                            <div *ngIf="nombre.errors?.['minlength']">
+                                Debe tener más de 4 letras
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="apellido">Apellido*</label>
+                        <input aria-label="Escriba su Apellido" aria-required="true" type="text" id="apellido" formControlName="apellido" placeholder="Su Apellido..." required>
+                        <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)"  class="alert alert-danger">
+                            <div *ngIf="apellido.errors?.['required']">
+                                Se requiere el Apellido.
+                            </div>
+                            <div *ngIf="apellido.errors?.['minlength']">
+                                Debe tener más de 4 letras
+                            </div>
+                        </div>  
+                    </div> 
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <label for="email">Email*</label>
+                        <input aria-label="Escriba su Email" type="email" id="email" formControlName="email" placeholder="Su Email..." aria-required="true" required>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)"  class="alert alert-danger">
+                            <div *ngIf="email.errors?.['required']">
+                                Se requiere el Email.
+                            </div>
+                            <div *ngIf="email.errors?.['email']">
+                                No parece ser un Email...
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="celular">Celular*</label>
+                        <input aria-label="Escriba su Celular" type="number" id="celular" formControlName="celular" placeholder="Su Celular..." aria-required="true" required>
+                        <div *ngIf="celular.invalid && (celular.dirty || celular.touched)"  class="alert alert-danger">
+                            <div *ngIf="celular.errors?.['required']">
+                                Se requiere el Celular.
+                            </div>
+                            <div *ngIf="celular.errors?.['minlength']">
+                                Debe tener más números
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <label for="mensaje">Mensaje</label>
+                <textarea  aria-label="Escriba su Mensaje" id="mensaje" name="mensaje" formControlName="mensaje" placeholder="Escribe algo..." style="height:75px"></textarea>
+                
+                <input aria-label="Enviar" role="button"  *ngIf="!enviando" type="submit" value="ENVIAR" class="btn mx-auto d-block">
+                <div class="success" *ngIf="emailOk==1">
+                    ¡Email enviado correctamente!<br/>
+                    Nos comunicaremos contigo a la brevedad...
+                </div>
+                <div class="alert" *ngIf="emailOk==2">
+                    Hemos tenido un inconveniente al enviar elemail...
+                </div>
+                <app-loader *ngIf="enviando"></app-loader>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex-column bg-color-2 top-radius">
+        <!--<div class="d-flex-iconos wow fadeInRight">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--naranja)" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+            </div>
+            <div>
+                <p class="titulo-contacto">Dirección:</p>
+                <p class="texto-contacto">Ruta 9, colectora Oeste. Bs As, Argentina. Km 37,8.</p>
+            </div>
+        </div>-->
+        <div class="d-flex-iconos wow fadeInRight">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--naranja)" class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                </svg>
+            </div>
+            <div>
+                <p class="titulo-contacto">Email:</p>
+                <p class="texto-contacto">info@genergy.com.ar</p>
+            </div>
+        </div>
+        <!--<div class="d-flex-iconos wow fadeInRight">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--naranja)" class="bi bi-phone" viewBox="0 0 16 16">
+                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                </svg>
+            </div>
+            <div>
+                <p class="titulo-contacto">Teléfono:</p>
+                <p class="texto-contacto">0800-222-2222</p>
+            </div>
+        </div>-->
+    </div>
+</div>
+</section>

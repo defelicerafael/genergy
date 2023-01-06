@@ -1,0 +1,95 @@
+footer{
+    background-image: linear-gradient(to top ,var(--gris) 25%, var(--gris) 75%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1.5rem;
+    color:var(--blanco);
+    --padding:1.5rem 0.5rem;
+   
+}
+
+.grid-container-footer{
+    display: grid;
+    gap:0;
+    grid-auto-rows: auto;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        'uno'
+        'dos'
+        'tres';
+}
+.grid-item-footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+.grid-icons{
+    display: grid;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
+    
+}
+
+.grid-item-icons {
+    padding: var(--padding);
+    justify-self: center;
+}
+
+.sin-puntos{
+    list-style: none;
+}
+
+li{
+    padding: 5px;
+    font-family: var(--font-family-regular);
+}
+ul{
+    padding-left: 0rem;
+}
+button{
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-family: Roboto,sans-serif;
+    letter-spacing: 1.2px;
+}
+
+hr{
+    border-top: 1px solid var(--blanco);
+    margin: 2rem;
+}
+.text-start{
+    text-align: center !important;
+}
+.mobile{
+    display: block;
+}
+.desk{
+    display: none;
+}
+@media (min-width:768px){
+   .grid-container-footer{
+        grid-template-columns: 20% 35% 20%;
+        grid-template-areas: 
+        'uno dos tres';
+        justify-content: space-evenly;
+   } 
+   .grid-item-footer {
+        padding: var(--padding);
+        /*border: white 2px solid;*/
+    }
+    .text-start{
+        text-align: left !important;
+    }
+    .mobile{
+        display: none;
+    }
+    .desk{
+        display: block;
+    }
+}

@@ -1,0 +1,105 @@
+/* PARALAX EFECT */
+.parallax {
+    /* The image used */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/img/bg/genergy-fondo.jpg");
+  
+    /* Set a specific height */
+    height: auto;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.padding-b{
+  padding: 1rem 0rem 6rem 0rem;
+  /*border: 1px red solid;*/
+  
+}
+.numeros{
+    background-color:rgba(0,0,0, 0);
+    padding: 0rem 4rem;
+    color:white;
+    margin-top: -2rem;
+}
+
+.grid-numeros{
+    display: grid;
+    gap:0;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+   /* border: 1px solid red;*/
+}
+.circulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    margin: 0 auto;
+    gap:0.7rem;
+}
+
+.circulo > .adentro-circulo{
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* NUMEROS */
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  .counter {
+    animation: counter 2.5s forwards ease-in-out;
+    counter-reset: num var(--num);
+    counter-reset: num var(--num);
+  }
+  
+  .counter::after {
+    content: counter(num);
+  }
+
+  @keyframes counter {
+    from {
+      --num: 0;
+    }
+    to {
+      --num: var(--numero);
+    }
+  }  
+
+@media only screen and (max-width: 746px) {
+    
+    .item-numeros{
+        padding: 1rem;
+    }
+    
+    .webp .parallax {
+      height: auto;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/img/bg/genergy-fondo-mobile.webp");
+     }
+    .no-webp .parallax {
+      height: auto;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/img/bg/genergy-fondo-mobile.jpg");
+    }
+    .grid-numeros{
+      grid-template-columns: repeat(2,1fr);
+      justify-content: center;
+    }
+    .numeros{
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 0rem 1rem;
+    }
+    .padding-b{
+      padding: 3rem 0rem 3rem 0rem;
+      /*border: 1px red solid;*/
+      
+    }
+}

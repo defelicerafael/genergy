@@ -1,0 +1,9 @@
+<head>
+<link rel="stylesheet" href="assets/libs/wow.js/css/animate.css">
+</head>
+<body>
+<script src="assets/libs/wow.js/js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</body>
